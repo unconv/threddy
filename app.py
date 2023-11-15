@@ -93,6 +93,9 @@ def send_message():
 
             file_ids.append(uploaded_file.id)
 
+            os.remove(file_path)
+            os.rmdir(temp_dir)
+
     message = {
         "role": "user",
         "content": request.form["message"]
