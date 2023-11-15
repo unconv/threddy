@@ -1,0 +1,3 @@
+{% for chat in conversations %}
+<button hx-get="/load_chat/{{ chat.id }}" class="chat-{{ chat.id }}" hx-target="main">{{ chat.title }}</button>
+{% endfor %}

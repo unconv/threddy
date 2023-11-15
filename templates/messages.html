@@ -1,0 +1,15 @@
+<div class="messages">
+    {% for message in messages %}
+    <div class="{{ message.role }} message">{{ message.content }}</div>
+    {% endfor %}
+</div>
+<form id="messageform" autocomplete="off" hx-encoding="multipart/form-data" hx-post="/send_message" hx-target=".messages" hx-swap="beforeend">
+    <input type="hidden" name="chat_id" value="{{ chat_id }}" />
+    <div class="upload-field">
+        Upload file: <input type="file" id="upload-file" name="file" />
+    </div>
+    <div class="message-div">
+        <input type="text" name="message" />
+        <button>Send</button>
+    </div>
+</form>
